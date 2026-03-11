@@ -61,8 +61,10 @@ class Personne:
     def Demander_genre(self):
         self.genre = input("Veuillez entrez votre genre : ")
 
-personne1 = Personne()
-personne2 = Personne()
+if __name__ = __main__:
 
-personne1.SePresenter()
-personne2.SePresenter()
+    personne1 = Personne()
+    personne2 = Personne()
+
+    personne1.SePresenter()
+    personne2.SePresenter()
