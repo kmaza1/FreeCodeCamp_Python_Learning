@@ -17,6 +17,7 @@
 #   False : Femme
 #   True  : Homme
 
+
 class Personne:
     def __init__(self, nom: str = "", age: int = 0, genre: bool = None ):
         self.nom = nom   # crée une variable d'instance : nom
@@ -40,12 +41,14 @@ class Personne:
         print("Constructeur personne " + self.nom)
         print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
 
-        Genre = "Masculin"  if self.genre else "Féménin"
-        #Signifie que  Genre ="Masculin" si self.genre = True et Genre  =  "Féménin" sinon
-        print(f"Genre : {Genre}")
-
-        Maturite = "Je suis majeur" if self.EstMajeur() else "Je suis mineure"
+        if self.genre:
+            Maturite = "Je suis majeur" if self.EstMajeur() else "Je suis mineur"
+            Genre = "Masculin"
+        else :
+            Maturite = "Je suis majeure" if self.EstMajeur() else "Je suis mineure"
+            Genre = "Feminin"
         print(Maturite)
+        print(f"Genre : {Genre}")
         # Signifie que Maturite = "Je suis majeur" si self.EstMajeur() == True et Maturite = "Je suis majeure" sinon
 
         print()
@@ -58,11 +61,33 @@ class Personne:
 
     def Demander_age(self):
         self.age = int(input("Veuillez entrez votre age : "))
+
     def Demander_genre(self):
         self.genre = input("Veuillez entrez votre genre : ")
+if __name__ == "__main__" :
+    personne1 = Personne("Renaud", 20, True)
+    personne2 = Personne("Ruth", 17, False)
+    personne3 = Personne("Piaget", 25, True)
+    personne4 = Personne()
 
-personne1 = Personne()
-personne2 = Personne()
+    lis_Personne = [personne1, personne2, personne3]
+    lis_Personne.append(personne4)
+    for personne in lis_Personne:
+        personne.SePresenter()
 
-personne1.SePresenter()
-personne2.SePresenter()
+"""
+    tuple_personnes  = (personne1, personne2,  personne3)
+
+    for i in range(len(tuple_personnes)):
+        tuple_personnes[i].SePresenter()
+        print()
+
+    for personne in tuple_personnes:
+        personne .SePresenter()
+        print() """
+
+
+
+
+
+
