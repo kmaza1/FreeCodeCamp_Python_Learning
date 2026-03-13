@@ -26,12 +26,14 @@ class Personne:
     def SePresenter(self):
         print(f"Bonjour, je suis une personne et je m'appelle  {self.nom}" )
 
-# ---
-chat1 = Chat()
-chat1.SePresenter()  # Bonjour, je suis un chat et je m'appelle inconnu
+if __name__ == "__main__":
 
-chat2 = Chat("Garfield")
-chat2.SePresenter()  # Bonjour, je suis un chat et je m'appelle Garfield
 
-personne = Personne("Jean")
-personne.SePresenter()  # Bonjour, je suis une personne et je m'appelle Jean
+    chat1 = Chat()
+    chat1.SePresenter()  # Bonjour, je suis un chat et je m'appelle inconnu
+
+    chat2 = Chat("Garfield")
+    chat2.SePresenter()  # Bonjour, je suis un chat et je m'appelle Garfield
+
+    personne = Personne("Jean")
+    personne.SePresenter()  # Bonjour, je suis une personne et je m'appelle Jean

@@ -14,23 +14,32 @@
 """
 
 # ---
-class Personne:
-    def __init__(self, nom: str):
+class Personne  :
+    def __init__(self, nom: str = ""):
         self.nom = nom
+        if nom == "":
+            self.Demander_nom()
 
     def SePresenter(self):
         print("Bonjour, je m'appelle " + self.nom)
 
-# ---
-noms = []
-noms.append(input("nom de la personne 1 : "))
-noms.append(input("nom de la personne 2 : "))
-noms.append(input("nom de la personne 3 : "))
+    def Demander_nom(self):
+        print("Mettez un vrai nom.")
+        self.nom = input(f"nom de la personne { i } : ")
 
-l = []
+if __name__ == "__main__":
 
-for nom in noms:
-    l.append(Personne(nom))
+    nombre_Personne = int(input("Combien de personne voulez- vous : "))
 
-for p in l:
-    print(p.SePresenter())
+    noms = []
+
+    for i in range(nombre_Personne):
+        input(f"nom de la personne {i+1} : ")
+
+    liste_Personne = []
+
+    for nom  in noms:
+        liste_Personne.append(Personne(nom))
+
+    for personne in liste_Personne:
+        personne.SePresenter()
