@@ -5,7 +5,7 @@
    Date          : 11/03/2025
    Niveau        : 2ème année Prépa Informatique
    Établissement : École Polytechnique de Lomé
-   Environnement : pycharm
+   Environnement : pycharm--
    Langage       : python 3.12
    Licence       : Freecodecamp
 
